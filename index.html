@@ -16,7 +16,45 @@
     </div>
     <div class="app-container" flex-row>
         <div class="left-side-area" flex>Sample div with 70% width</div>
-        <div class="right-side-area" flex>Button playing area</div>
+        <div class="right-side-area" flex>Button playing area
+            <style>
+                span{
+                    position:absolute;
+                    top:10px;
+                    left:10px;
+                    transition:all .5s linear;
+                    margin:10px;
+                    padding:10px;
+                }
+                button:hover{
+                    cursor:pointer
+                }
+            </style>
+            <span>
+  <button>button</button>
+</span>
+            </div>
     </div>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("span").on({
+                mouseover:function(){
+
+                    if($("button")[0].innerHTML=="heheheh ;)")
+                        $("button")[0].innerHTML = "button";
+                    else
+                        $("button")[0].innerHTML ="heheheh ;)";
+                    $(this).css({
+                        left:(Math.random()*450)+"px",
+                        top:(Math.random()*450)+"px",
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
